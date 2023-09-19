@@ -1,0 +1,8 @@
+.App {
+    font-family: "EF_jejudoldam.ttf";
+}
+
+@font-face {
+    font-family: "EF_jejudoldam.ttf" ;
+    src: url(/src/assets/fonts/EF_jejudoldam\(윈도우용_TTF\).ttf);
+}
