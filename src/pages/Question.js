@@ -92,7 +92,7 @@ const Question = () => {
     return (
         <Wrapper>
             <ProgressBar striped variant="danger" now={(questionNo / QuestionData.length) * 100} style={{marginTop: '20px'}} />
-            <Title>{QuestionData[0].title}</Title>
+            <Title>{QuestionData[questionNo].title}</Title>
 
             <ButtonGroup>
               <Button onClick= {()=>handleClickButton(1, QuestionData[questionNo].type)} style={{width:"40%", minHeight:"200px", fontSize: "15pt"}}>{QuestionData[questionNo].answera}</Button>
