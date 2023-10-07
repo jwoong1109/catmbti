@@ -6,8 +6,7 @@ import  Button  from 'react-bootstrap/Button';
 import {useNavigate} from 'react-router-dom';
 const Home = () => {
     const navigate = useNavigate();
-
-
+    
     const handleClickButton = () => {
         //useHistotry
         navigate('/question');

@@ -1,7 +1,7 @@
 import React from 'react';
 //css-in-js
 import styled from 'styled-components';
-import PangImage from '../assets/ggompang.jpeg'
+
 import  Button  from 'react-bootstrap/Button';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ResultData } from '../assets/data/resultdata';
