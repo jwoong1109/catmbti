@@ -59,7 +59,7 @@ background: rgba(142, 68, 173, 0.5); /* 투명한 배경 색상 */
 const Footer = () => {
   return (
     <FooterContainer>
-      <p>저작권 © 2023 내 웹사이트. 모든 권리 보유.</p>
+      <p>저작권 © 2023 내 웹사이트.</p>
     </FooterContainer>
   );
 };
