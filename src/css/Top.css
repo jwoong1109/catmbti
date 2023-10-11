@@ -1,6 +1,6 @@
 /* Top.css */
 .navbar {
-    background-color: #333; /* 나브바 배경색 */
+    background-color:hsl(0, 100%, 74%);; /* 나브바 배경색 */
     padding: 10px 20px; /* 내부 패딩 */
     display: flex;
     justify-content: flex-end; /* 버튼을 오른쪽에 정렬 */
