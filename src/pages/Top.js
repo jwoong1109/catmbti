@@ -1,49 +1,70 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react'; // useState import 추가
-import '../css/Top.css';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+
 
 
 const Top = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // isLoggedIn 상태 추가
-    const navigate = useNavigate();
-  
-    const handleLogout = async () => {
-      try {
-        // 로그아웃 처리를 수행하는 코드 (예: Firebase의 signOut 함수 호출)
-        // 이 예제에서는 Firebase를 사용하고 있으므로 Firebase의 signOut 함수를 호출한다고 가정합니다.
-        // 실제로 사용하는 인증 서비스에 따라 로그아웃 코드가 다를 수 있습니다.
-  
-        // 여기서 사용자 로그아웃 후의 작업을 수행할 수 있습니다.
-        // setIsLoggedIn를 사용하여 로그아웃 상태로 변경
-        setIsLoggedIn(false);
-  
-        // 로그아웃 후 "/" 경로로 이동
-        navigate("/");
-      } catch (error) {
-        console.error(error);
-      }
-    };
-  
-    const handleLogoClick = () => {
-      // Logo를 클릭하면 "/" 경로로 이동
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      setIsLoggedIn(false);
       navigate("/");
-    };
-  
-    return (
-      <nav className="navbar" style={{ width: '100%' }}>
-        
-        {isLoggedIn ? (
-          <button className="button" onClick={handleLogout}>로그아웃</button>
-        ) : (
-          <div>
-            <button className="button" style={{ marginRight: '10px' }} onClick={() => navigate("/")}>Main</button>
-            <button className="button" style={{ marginRight: '10px' }} onClick={() => navigate("/Join")}>회원가입</button>
-            <button className="button" onClick={() => navigate("/Login")}>로그인</button>
-          </div>
-        )}
-      </nav>
-    );
+    } catch (error) {
+      console.error(error);
+    }
   };
-  
-  export default Top;
-  
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
+
+  return (
+    <Navbar>
+      {isLoggedIn ? (
+        <Button onClick={handleLogout}>로그아웃</Button>
+      ) : (
+        <div>
+          <Button style={{ marginRight: '10px' }} onClick={() => navigate("/")}>
+            Main
+          </Button>
+          <Button style={{ marginRight: '10px' }} onClick={() => navigate("/Join")}>
+            회원가입
+          </Button>
+          <Button onClick={() => navigate("/Login")}>로그인</Button>
+        </div>
+      )}
+    </Navbar>
+  );
+};
+
+export default Top;
+
+
+// Navbar 스타일 컴포넌트 정의
+const Navbar = styled.nav`
+  background-color: hsl(0, 100%, 74%); /* 나브바 배경색 */
+  padding: 10px 20px; /* 내부 패딩 */
+  display: flex;
+  justify-content: flex-end; /* 버튼을 오른쪽에 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  width: 100%;
+`;
+
+// Button 스타일 컴포넌트 정의
+const Button = styled.button`
+  background-color: #E50914; /* 버튼 배경색 */
+  color: #fff; /* 버튼 텍스트 색상 */
+  border: none; /* 테두리 제거 */
+  padding: 10px 20px; /* 버튼 내부 패딩 */
+  border-radius: 5px; /* 버튼 둥근 테두리 */
+  cursor: pointer; /* 포인터 커서 효과 */
+  transition: background-color 0.2s; /* 배경색 전환 효과 */
+
+  /* 버튼 호버 효과 */
+  &:hover {
+    background-color: #ff0000; /* 호버 시 배경색 변경 */
+  }
+`;

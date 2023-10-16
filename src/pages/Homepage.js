@@ -5,12 +5,19 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import '../css/Header.css';
 import '../css/Test.css';
-import '../css/Top.css';
+
 import './Join';
 import Top from './Top';
 import { TestData } from '../assets/data/testdata';
 
 const Homepage = () => {
+
+  const goToRandomTest = () => {
+    const randomIndex = Math.floor(Math.random() * TestData.length);
+    const randomTest = TestData[randomIndex];
+    window.location.href = `/Home${randomIndex + 1}`;
+  };
+
   const Header = () => {
     return <div className="name-logo">MBTI 테스트 하기</div>;
   };
@@ -21,15 +28,15 @@ const Homepage = () => {
         <Link to="/Home" className="section section-1">
           <div>{TestData[0].name}</div>
         </Link>
-        <div className="section section-2">
-          <div>테스트 1</div>
-        </div>
-        <div className="section section-3">
-          <div>테스트 1</div>
-        </div>
-        <div className="section section-4">
-          <div>테스트 1</div>
-        </div>
+        <Link to="/Home" className="section section-2">
+          <div>{TestData[1].name}</div>
+        </Link>
+        <Link to="/Home" className="section section-3">
+          <div>{TestData[2].name}</div>
+        </Link>
+        <Link to="/Home" className="section section-4">
+          <div>{TestData[3].name}</div>
+        </Link>
       </div>
     );
   };
@@ -41,6 +48,7 @@ const Homepage = () => {
       <Contents>
         <Title>Choose Your Test!</Title>
         <Test />
+        <RandomTestButton onClick={goToRandomTest}>랜덤 테스트 하기!</RandomTestButton>
       </Contents>
       <Footer />
     </Wrapper>
@@ -50,7 +58,7 @@ const Homepage = () => {
 export default Homepage;
 
 const Wrapper = styled.div`
-background: rgba(142, 68, 173, 0.5); /* 투명한 배경 색상 */
+background: rgba(142, 68, 173, 0.3); /* 투명한 배경 색상 */
   height: 100vh; /* 화면 높이 100%로 설정 */
   width: 100%; /* 화면 너비 100%로 설정 */
   position: relative; /* 상대 위치 지정 */
@@ -86,4 +94,14 @@ const Title = styled.div`
   margin-top: 40px;
   text-align: center;
   font-family: "EF_jejudoldam";
+`;
+
+const RandomTestButton = styled.button`
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
 `;

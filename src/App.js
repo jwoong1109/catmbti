@@ -4,6 +4,7 @@ import Question from './pages/Question';
 import Result from './pages/Result';
 import Join from './pages/Join';
 import Login from './pages/Login';
+import Card from './pages/card';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/Home" element={<Home />} />
       <Route path="/question" element={<Question />} />
       <Route path="/result" element={<Result />} />
+      <Route path="/card" element={<Card />} />
     </Routes>
   );
 }
