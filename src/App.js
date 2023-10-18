@@ -1,7 +1,10 @@
 import Homepage from './pages/Homepage';
-import Home from './pages/Home';
-import Question from './pages/Question';
-import Result from './pages/Result';
+import Home from './pages/Home1';
+import Home3 from './pages/Home3';
+import Question from './pages/Question1';
+import Question3 from './pages/Question3';
+import Result from './pages/Result1';
+import Result3 from './pages/Result3';
 import Join from './pages/Join';
 import Login from './pages/Login';
 import Card from './pages/card';
@@ -17,9 +20,12 @@ function App() {
       <Route path="/" element={<Homepage />} /> 
       <Route path="/Join" element={<Join />} /> 
       <Route path="/Login" element={<Login />} /> 
-      <Route path="/Home" element={<Home />} />
-      <Route path="/question" element={<Question />} />
-      <Route path="/result" element={<Result />} />
+      <Route path="/Home1" element={<Home />} />
+      <Route path='/Home3' element={<Home3 />} />
+      <Route path="/question1" element={<Question />} />
+      <Route path='/question3' element={<Question3 />} />
+      <Route path="/result1" element={<Result />} />
+      <Route path='/result3' element={<Result3 />} />
       <Route path="/card" element={<Card />} />
     </Routes>
   );

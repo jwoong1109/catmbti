@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom"; // useNavigate 임포트
+import { useNavigate } from "react-router-dom";
 import Top from './Top';
 
 const Join = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate();
 
   const register = async () => {
     try {
@@ -18,10 +18,14 @@ const Join = () => {
         registerPassword
       );
       console.log(userCredential);
+      
+      // 사용자가 생성되면 메인 홈페이지로 리디렉션
+      navigate('/');
     } catch (error) {
       console.log(error.message);
     }
   };
+  
   
   return (
     <Wrapper>

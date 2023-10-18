@@ -25,16 +25,16 @@ const Homepage = () => {
     return (
       <div className="main-container">
         {/* 테스트 1을 Home 컴포넌트로 링크 */}
-        <Link to="/Home" className="section section-1">
+        <Link to="/Home1" className="section section-1">
           <div>{TestData[0].name}</div>
         </Link>
-        <Link to="/Home" className="section section-2">
+        <Link to="/Home2" className="section section-2">
           <div>{TestData[1].name}</div>
         </Link>
-        <Link to="/Home" className="section section-3">
+        <Link to="/Home3" className="section section-3">
           <div>{TestData[2].name}</div>
         </Link>
-        <Link to="/Home" className="section section-4">
+        <Link to="/Home4" className="section section-4">
           <div>{TestData[3].name}</div>
         </Link>
       </div>
