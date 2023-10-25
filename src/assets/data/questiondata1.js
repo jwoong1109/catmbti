@@ -33,8 +33,8 @@ export const QuestionData = [
     {
       id: 5,
         title: "일할 때 나는",
-      answera: "꼼꼼하게 정확하게 읽는다.",
-      answerb: "전체적인 의미를 파악하며 읽는다.",
+      answera: "남들이 하는 대로 따라가는 것이 좋다.",
+      answerb: "스스로 나만의 방법을 만드는게 좋다",
       type: "SN",
     },
     {
