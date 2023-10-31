@@ -33,7 +33,7 @@ export const QuestionData4 = [
     {
       id: 5,
       title:
-        "꽃을 예브게 꽂아놓은 나 무슨 생각이 들까",
+        "꽃을 예쁘게 꽂아놓은 나 무슨 생각이 들까",
       answera: "예쁘다 정리하고 꽂아놓길 잘했네",
       answerb: "지금은 이쁜데 시들면 어쩌지? 어디다 놔야 오래갈까",
       type: "SN",
